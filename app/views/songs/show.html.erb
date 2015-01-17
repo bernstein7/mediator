@@ -25,5 +25,10 @@
   <%= @song.rating %>
 </p>
 
+<p>
+  <strong>Remote url:</strong>
+  <%= @song.remote_url %>
+</p>
+
 <%= link_to 'Edit', edit_song_path(@song) %> |
 <%= link_to 'Back', songs_path %>

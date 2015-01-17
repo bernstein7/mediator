@@ -6,6 +6,7 @@ class CreateSongs < ActiveRecord::Migration
       t.integer :user_id
       t.string :album
       t.float :rating
+      t.string :remote_url
 
       t.timestamps null: false
     end

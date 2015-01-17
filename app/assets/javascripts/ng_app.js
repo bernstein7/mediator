@@ -1,0 +1,2 @@
+mediator = angular.module('mediator',[
+]);

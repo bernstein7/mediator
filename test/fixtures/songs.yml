@@ -6,6 +6,7 @@ one:
   user_id: 1
   album: MyString
   rating: 1.5
+  remote_url: MyString
 
 two:
   name: MyString
@@ -13,3 +14,4 @@ two:
   user_id: 1
   album: MyString
   rating: 1.5
+  remote_url: MyString
