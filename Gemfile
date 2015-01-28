@@ -37,7 +37,7 @@ gem 'bootstrap-generators'
 
 group :development do
   gem 'capistrano-rails'
-  gem 'capistrano-rbenv', '~> 2.0', require: false
+  gem 'capistrano-rvm'
 
   gem 'pry'
 end
