@@ -43,4 +43,5 @@ server '104.236.241.193', user: 'bernstein', roles: %w{web app}#, my_property: :
 #     auth_methods: %w(publickey password)
 #     # password: 'please use keys'
 #   }
-set :deploy_to, "/home/bernstein/#{application}"
+set :deploy_to, "/home/bernstein/#{fetch(:application)}"
+set :socket_path, "#{fetch(:deploy_to)}/shared/tmp/sockets/thin.sock"
