@@ -43,3 +43,4 @@ server '104.236.241.193', user: 'bernstein', roles: %w{web app}#, my_property: :
 #     auth_methods: %w(publickey password)
 #     # password: 'please use keys'
 #   }
+set :deploy_to, "/home/bernstein/#{application}"
