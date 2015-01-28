@@ -3,10 +3,15 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
+
+gem 'thin'
 # Use PostgreSQL as the database for Active Record
 gem 'pg'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
+# Use LESS for stylesheets
+gem 'therubyracer'
+gem 'less-rails'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
@@ -29,6 +34,13 @@ gem 'spring',        group: :development
 gem 'bower-rails'
 
 gem 'bootstrap-generators'
+
+group :development do
+  gem 'capistrano-rails'
+  gem 'capistrano-rbenv', '~> 2.0', require: false
+
+  gem 'pry'
+end
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

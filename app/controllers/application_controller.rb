@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
-  def template
-    render json: {success: true}
+  def templates
+    render params[:path].gsub(/:/, "/"), layout: false
   end
 end
