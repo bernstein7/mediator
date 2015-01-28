@@ -32,7 +32,8 @@ set :linked_dirs, fetch(:linked_dirs, []).push('bin', 'log', 'tmp/pids', 'tmp/ca
 
 # Default value for default_env is {}
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
-
+set :default_env, { rvm_bin_path: '~/.rvm/bin' }
+# SSHKit.config.command_map[:rake] = "#{fetch(:default_env)[:rvm_bin_path]}/rvm ruby-#{fetch(:rvm_ruby_version)} do bundle exec rake"
 # Default value for keep_releases is 5
 set :keep_releases, 5
 
@@ -47,8 +48,10 @@ namespace :deploy do
 
   desc 'Restart application'
   task :restart do
-    on roles(:app), in: :sequence, wait: 5 do
-      execute "cd #{fetch(:deploy_to)}/current && bundle exec thin -S #{fetch(:socket_path)} start"  ## -> line you should add
+    on roles(:app) do
+      within release_path do
+        execute "cd #{fetch(:deploy_to)}/current && bundle exec thin -S #{fetch(:socket_path)} start"  ## -> line you should add
+      end
     end
   end
 

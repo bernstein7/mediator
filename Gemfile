@@ -37,7 +37,9 @@ gem 'bootstrap-generators'
 
 group :development do
   gem 'capistrano-rails'
-  gem 'capistrano-rvm'
+  # gem 'capistrano-rvm'
+  gem 'rvm-capistrano'
+  # gem 'rvm1-capistrano3', :require => false
 
   gem 'pry'
 end
