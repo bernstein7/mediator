@@ -38,10 +38,17 @@ set :keep_releases, 5
 
 namespace :deploy do
 
+  desc 'Start application'
+  task :start do
+    on roles(:app), in: :sequence, wait: 5 do
+      execute "cd #{fetch(:deploy_to)}/current && bundle exec thin -S #{fetch(:socket_path)} start"  ## -> line you should add
+    end
+  end
+
   desc 'Restart application'
   task :restart do
     on roles(:app), in: :sequence, wait: 5 do
-      execute "thin -S #{fetch(:socket_path)} start"  ## -> line you should add
+      execute "cd #{fetch(:deploy_to)}/current && bundle exec thin -S #{fetch(:socket_path)} start"  ## -> line you should add
     end
   end
 
@@ -53,5 +60,7 @@ namespace :deploy do
       # end
     end
   end
+
+  after :publishing, :restart
 
 end
