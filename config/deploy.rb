@@ -25,7 +25,7 @@ set :scm, :git
 # set :pty, true
 
 # Default value for :linked_files is []
-set :linked_files, fetch(:linked_files, []).push('config/database.yml')
+set :linked_files, fetch(:linked_files, []).push('config/database.yml', 'config/secrets.yml')
 
 # Default value for linked_dirs is []
 set :linked_dirs, fetch(:linked_dirs, []).push('bin', 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system')
@@ -42,7 +42,9 @@ namespace :deploy do
   desc 'Start application'
   task :start do
     on roles(:app), in: :sequence, wait: 5 do
-      execute "cd #{fetch(:deploy_to)}/current && bundle exec thin -S #{fetch(:socket_path)} start"  ## -> line you should add
+      execute "cd #{fetch(:deploy_to)}/current && ~/.rvm/bin/rvm 2.2.0 do bundle exec thin -S #{fetch(:socket_path)} -e staging -d start"  ## -> line you should add
+
+      # execute "cd #{fetch(:deploy_to)}/current && bundle exec thin -S #{fetch(:socket_path)} start"  ## -> line you should add
     end
   end
 
@@ -50,7 +52,7 @@ namespace :deploy do
   task :restart do
     on roles(:app) do
       within release_path do
-        execute "cd #{fetch(:deploy_to)}/current && bundle exec thin -S #{fetch(:socket_path)} start"  ## -> line you should add
+        execute "cd #{fetch(:deploy_to)}/current && ~/.rvm/bin/rvm 2.2.0 do bundle exec thin -S #{fetch(:socket_path)} -e staging -d restart"  ## -> line you should add
       end
     end
   end
