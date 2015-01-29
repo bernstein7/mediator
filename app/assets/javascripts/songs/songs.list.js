@@ -49,12 +49,9 @@ mediator.controller('SongsCtrl', ['$scope', '$location', '$rootScope', 'songsSto
     angular.forEach($scope.songs, function(song) {
       // song.audio = new Audio(song.remote_url);
       song.audio = new Audio();
-      song.audio.preload = 'metadata'
+      song.audio.preload = 'none'
 
-      // bugfix for chrome...
-      setTimeout(function() {
-        song.audio.src = song.remote_url;
-      }, 1);
+      song.audio.src = song.remote_url;
       // song.audio.src = song.remote_url;
       // // debugger;
       // // song.data = song.remote_url;
