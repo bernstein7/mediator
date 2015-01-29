@@ -45,18 +45,18 @@ mediator.controller('SongsCtrl', ['$scope', '$location', '$rootScope', 'songsSto
 
   //private
 
-  // function _initiateAudios() {
-  //   angular.forEach($scope.songs, function(song) {
-  //     // song.audio = new Audio(song.remote_url);
-  //     song.audio = new Audio();
-  //     song.audio.preload = 'none'
+  function _initiateAudios() {
+    angular.forEach($scope.songs, function(song) {
+      // song.audio = new Audio(song.remote_url);
+      song.audio = new Audio();
+      song.audio.preload = 'none'
 
-  //     song.audio.src = song.remote_url;
-  //     // song.audio.src = song.remote_url;
-  //     // // debugger;
-  //     // // song.data = song.remote_url;
-  //   })
-  // }
+      song.audio.src = song.remote_url;
+      // song.audio.src = song.remote_url;
+      // // debugger;
+      // // song.data = song.remote_url;
+    })
+  }
 
   $scope.$watch('volume', function(val){
     if ($scope.currentSong.audio) {
