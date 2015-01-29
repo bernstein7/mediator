@@ -185,6 +185,7 @@ PLATFORMS
 DEPENDENCIES
   bootstrap-generators
   bower-rails
+  capistrano-bundler
   capistrano-rails
   capistrano-rvm
   coffee-rails (~> 4.0.0)

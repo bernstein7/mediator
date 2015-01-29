@@ -38,6 +38,7 @@ gem 'bootstrap-generators'
 group :development do
   gem 'capistrano-rails'
   gem 'capistrano-rvm'
+  gem 'capistrano-bundler'
   gem 'pry'
 end
 # Use ActiveModel has_secure_password
