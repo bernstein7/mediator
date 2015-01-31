@@ -57,6 +57,15 @@ namespace :deploy do
     end
   end
 
+  desc 'Stop application'
+  task :stop do
+    on roles(:app) do
+      within release_path do
+        execute "cd #{fetch(:deploy_to)}/current && ~/.rvm/bin/rvm 2.2.0 do bundle exec thin -e staging stop"  ## -> line you should add
+      end
+    end
+  end
+
   after :restart, :clear_cache do
     on roles(:web), in: :groups, limit: 3, wait: 10 do
       # Here we can do anything such as:
