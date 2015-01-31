@@ -3,6 +3,10 @@
 <div ng-controller="SongsCtrl" volume-scroll>
   <h1>Listing Songs</h1>
   <h2>{{volume}}</h2>
+  <!-- {{test}} -->
+<!--   <audio controls="controls" autobuffer="autobuffer" autoplay="autoplay" id='lol'>
+  </audio>
+ -->  {{currentSong.audio.readyState}}
   <div class="col-md-6">
     <div class="list-group" >
       <div ng-repeat="song in songs">

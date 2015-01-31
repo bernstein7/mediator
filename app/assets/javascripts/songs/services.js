@@ -41,6 +41,12 @@ mediator.factory('songsStorage', ['$rootScope', '$resource', '$routeParams', '$i
         $rootScope.$emit('songAdded');
         if(typeof callback == 'function') callback(response);
       });
+    },
+
+    stream: function(id, callback){
+      Song.stream({id: id}, function(response){
+        if(typeof callback == 'function') callback(response); 
+      });
     }
   }
 

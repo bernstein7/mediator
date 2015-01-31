@@ -1,11 +1,13 @@
 class SongsController < ApplicationController
-  before_action :set_song, only: [:show, :edit, :update, :destroy]
+  before_action :set_song, only: [:show, :edit, :update, :destroy, :stream]
 
 
   # GET /songs
   # GET /songs.json
   def index
     @songs = Song.all
+    # binding.pry
+    # @songs.push({name: "lol", author: "test", remote_url: Rails.cache.fetch(:test2) })
     render json: @songs
   end
 
@@ -61,6 +63,13 @@ class SongsController < ApplicationController
       format.html { redirect_to songs_url, notice: 'Song was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+
+  def stream
+    file = File.read(Rails.root.join("public", "media", @song.origin_file_name))
+    encoded = Base64.encode64(file).chomp
+    render json: {url: encoded}
   end
 
   private
