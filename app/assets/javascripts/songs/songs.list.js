@@ -78,13 +78,11 @@ mediator.controller('SongsCtrl', ['$scope', '$location', '$rootScope', 'songsSto
       });
 
       $scope.currentSong.audio.oncanplay = function(audio){
-        debugger;
-        // audio.target.play();
+        // debugger;
       }
 
       $scope.currentSong.audio.addEventListener('loadstart', function() {
-        debugger;
-        // deferred.resolve(audio);
+        // debugger;
       });
       
       $scope.currentSong.audio.addEventListener('error', function(e) {
