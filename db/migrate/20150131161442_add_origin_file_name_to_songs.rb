@@ -3,7 +3,7 @@ class AddOriginFileNameToSongs < ActiveRecord::Migration
     add_column :songs, :origin_file_name, :string
 
     Song.all.each do |song|
-      song.update(origin_file_name: song.remote_url[28..-1])
+      song.update(origin_file_name: song.remote_url[-21..-1])
     end
   end
 end
