@@ -36,20 +36,20 @@ mediator.controller('SongsCtrl', ['$scope', '$location', '$rootScope', 'songsSto
       // Добавляем слушателей событий
       // Ресурсы уже кэшированнны. Индикатор прогресса скрыт.
       cache.addEventListener('cached', function(e) {
-        debugger;
+        // debugger;
       }, false);
       // Начало скачивания ресурсов. progress_max - количество ресурсов. Показываем индикатор прогресса
       cache.addEventListener('downloading', function(e) {
-        debugger;
+        // debugger;
         progress_max = 3;
       }, false);
       // Процесс скачивания ресурсов. Индикатор прогресса изменяется
       cache.addEventListener('progress', function(e) {
-        debugger;
+        // debugger;
       }, false);
       // Скачивание ресурсов. Скрываем индикатор прогресса. Обновляем кэш. Перезагружаем страницу.
       cache.addEventListener('updateready', function(e) {
-        debugger;
+        // debugger;
         window.applicationCache.swapCache(); 
         location.reload();
       }, false);
