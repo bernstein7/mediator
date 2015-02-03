@@ -44,8 +44,8 @@ mediator.directive('progressBar', ['$document', '$interval', function($document,
     restrict: 'A',
     link: function(scope, element, atts) {
       $interval(function() {
-        if (!scope.currentSong.audio.paused){
-          element.val(scope.currentSong.audio.currentTime / scope.currentSong.audio.duration);
+        if (!scope.currentSong.paused && scope.defaultBuffer){
+          element.val(scope.currentSong.currentTime / (scope.defaultBuffer.duration));
         }
       }, 25);
     }

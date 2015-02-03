@@ -10,10 +10,10 @@
   <div class="col-md-6">
     <div class="list-group" >
       <div ng-repeat="song in songs">
-        <a class="nounderline" ng-show="song.audio.paused" ng-click="play(song)">
+        <a class="nounderline" ng-show="song.paused" ng-click="play(song)">
           <i class="glyphicon glyphicon-play" ></i>
         </a>
-        <a class="nounderline" ng-hide="song.audio.paused" ng-click="pause(song)">
+        <a class="nounderline" ng-hide="song.paused" ng-click="pause(song)">
           <i class="glyphicon glyphicon-pause" ></i>
         </a>
         {{song.author}}
