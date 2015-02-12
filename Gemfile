@@ -34,7 +34,7 @@ gem 'spring',        group: :development
 gem 'bower-rails'
 
 gem 'bootstrap-generators'
-
+gem 'newrelic_rpm'
 group :development do
   gem 'capistrano-rails'
   gem 'capistrano-rvm'
