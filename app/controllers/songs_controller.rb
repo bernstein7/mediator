@@ -69,6 +69,7 @@ class SongsController < ApplicationController
   def stream
     file = File.read(Rails.root.join("public", "media", @song.origin_file_name))
     encoded = Base64.encode64(file).chomp
+    # render file: 'songs/ufo.js', content_type: 'text/javascript'
     render json: {url: encoded}
   end
 

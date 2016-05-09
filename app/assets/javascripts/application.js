@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require base64-binary
 //= require angular/angular
 //= require angular-route/angular-route
 //= require angular-resource/angular-resource
@@ -21,3 +22,11 @@
 //= require seiyria-bootstrap-slider
 //= require ./ng_app
 //= require_tree .
+
+// $.ajax({
+//   url: 'jsongs/ufo.js',
+//   dataType: "script",
+//   success: function(e) {
+//     debugger;
+//   }
+// });

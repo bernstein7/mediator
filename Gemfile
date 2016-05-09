@@ -32,6 +32,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 
 gem 'bower-rails'
+gem 'vacuum'
 
 gem 'bootstrap-generators'
 gem 'newrelic_rpm'

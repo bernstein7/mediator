@@ -1,0 +1,11 @@
+pid: /home/bernstein/projects/mediator/tmp/pids/thin.pid
+log: /home/bernstein/projects/mediator/log/thin.log
+max_conns: 1024
+environment: development
+max_persistent_conns: 512
+servers: 1
+# threaded: true
+# daemonize: false
+# port: 3333
+socket: /home/bernstein/projects/mediator/tmp/sockets/thin.sock
+chdir: /home/bernstein/projects/mediator
